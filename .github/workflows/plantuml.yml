@@ -1,16 +1,14 @@
-name: CI
-
-on: [push]
+name: Draw diagrams
+on: push
 
 jobs:
-  build:
-
+  diagrams:
+    name: Draw diagrams
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: PlantUML CLI
-      uses: lokkju/github-action-plantuml@v0.0.1
-      with:
-        args: uml/*.puml
-      
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Process diagrams
+        uses: Timmy/plantuml-action@v1
+        with:
+          args: '-tpng uml/*.puml'
