@@ -8,6 +8,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get install graphviz
+          curl -o plantuml.jar https://iweb.dl.sourceforge.net/project/plantuml/plantuml.jar
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Process Diagrams
