@@ -5,18 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     name: plantuml
     steps:
-      - name: Install Dependencies
-        run: |
-          sudo apt-get install graphviz
-          curl -o plantuml.jar https://iweb.dl.sourceforge.net/project/plantuml/plantuml.jar
-          echo ${{ github.workspace }}
-          pwd && ls
-      - name: Checkout Repository
+      - name: Check out repository
         uses: actions/checkout@v2
-      - name: Process Diagrams
-        run: ls && java -jar plantuml.jar -v -tsvg -r -o "${{ github.workspace }}/uml" "uml/**.puml"
-      - name: Display Diagrams
-        run: pwd && ls uml
+      - name: Process diagrams
+        uses: Timmy/plantuml-action@v1
+        with:
+          args: '-tsvg uml/*.puml'
       - name: Commit Diagrams
         run: |
           git config --local user.email "action@github.com"
