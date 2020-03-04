@@ -1,4 +1,4 @@
-@startuml Requisitos Voluntariado
+@startuml casos_de_uso
 
 ' Actores
 actor Admin     as "Administrador de actividades"
