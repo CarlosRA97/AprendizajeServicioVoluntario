@@ -9,6 +9,7 @@ jobs:
         run: |
           sudo apt-get install graphviz
           curl -o plantuml.jar https://iweb.dl.sourceforge.net/project/plantuml/plantuml.jar
+          echo ${{ github.workspace }}
           pwd && ls
       - name: Checkout Repository
         uses: actions/checkout@v2
