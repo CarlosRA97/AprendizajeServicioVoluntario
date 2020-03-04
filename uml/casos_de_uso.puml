@@ -1,0 +1,57 @@
+@startuml Requisitos Voluntariado
+
+' Actores
+actor Admin     as "Administrador de actividades"
+actor Demand    as "Demandante"
+actor Offer     as "Ofertante"
+
+' Casos de uso
+(Registrarse como solicitante)                  as RegisterDemand
+(Registrarse como ofertante)                    as RegisterOffer
+(Solicitar la participacion a una actividad)    as RequestActivity
+(Evaluar la calidad de una actividad)           as EvaluateQuality
+(Evaluar la viabilidad de una actividad)        as EvaluateViability
+(Enviar correos o mensajes privados)            as SendMessages
+(Retirar la participacion de una actividad)     as RemoveParticipation
+(Comentar en una actividad)                     as CommentActivity
+(Modificar una actividad)                       as ModifyActivity
+(Evaluar el estado de una actividad)            as EvaluateActivityStatus
+(Crear una actividad)                           as CreateActivity
+(Modificar preferencias)                        as ModifyPrefernces
+usecase ManageParticipation as "Gestiona la participacion
+de un solicitante en una actividad"
+
+
+left to right direction
+
+' Operaciones de Demandante
+Demand -down-> SendMessages
+
+Demand --> RegisterDemand
+Demand --> RequestActivity
+Demand --> ModifyPrefernces
+
+RequestActivity ..> EvaluateQuality
+RequestActivity ..> RemoveParticipation
+RequestActivity ..> CommentActivity
+
+' Operaciones de Administrador
+Admin -down-> SendMessages
+
+Admin -right-> EvaluateViability
+' Compartido con ofertante
+Admin --> ManageParticipation
+Admin --> ModifyActivity
+Admin --> EvaluateActivityStatus
+
+' Operaciones de Ofertante
+Offer -up-> SendMessages
+
+Offer -down-> RegisterOffer
+Offer -down-> CreateActivity
+' Compartido con administrador
+Offer -up-> ManageParticipation
+Offer -up-> ModifyActivity
+Offer -up-> EvaluateActivityStatus
+
+@enduml
