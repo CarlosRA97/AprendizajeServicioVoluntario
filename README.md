@@ -1,1 +1,1 @@
-![]("/uml/casos_de_uso.svg")
+![](./uml/casos_de_uso.svg)
