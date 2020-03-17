@@ -35,9 +35,9 @@ RequestActivity ..> CommentActivity
 ' Operaciones de Administrador
 Admin -right-> EvaluateViability
 ' Compartido con ofertante
-Admin --> ManageParticipation
-Admin --> ModifyActivity
-Admin --> EvaluateActivityStatus
+EvaluateViability ..> ManageParticipation
+EvaluateViability ..> ModifyActivity
+EvaluateViability ..> EvaluateActivityStatus
 
 ' Operaciones de Ofertante
 Offer -down-> RegisterOffer
