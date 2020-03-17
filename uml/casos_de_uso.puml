@@ -48,10 +48,10 @@ Admin --> EvaluateActivityStatus
 Offer -up-> SendMessages
 
 Offer -down-> RegisterOffer
-Offer -down-> CreateActivity
-' Compartido con administrador
-Offer -up-> ManageParticipation
-Offer -up-> ModifyActivity
-Offer -up-> EvaluateActivityStatus
+Offer -up-> CreateActivity
+
+CreateActivity .up.> ManageParticipation
+CreateActivity .up.> ModifyActivity
+CreateActivity .up.> EvaluateActivityStatus
 
 @enduml
