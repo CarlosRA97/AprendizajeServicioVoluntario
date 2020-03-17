@@ -187,15 +187,18 @@
 <li>Correo de contacto(Puede ser el ofrecido por la empresa u otro)</li>
 <li>Nombre del administrador de la actividad.</li>
 <li>Convocatorias anteriores.</li>
-<li>Estado de la actividad.<br>
-8. En trámite.<br>
-9. Aceptada.<br>
-10. Denegada.<br>
-11. Modificada.<br>
-12. Oculta.<br>
-13. Publicada.<br>
-14. Abierta.<br>
-15. Cerrada.</li>
+<li>Estado de la actividad.
+<ol>
+<li>En trámite.</li>
+<li>Aceptada.</li>
+<li>Denegada.</li>
+<li>Modificada.</li>
+<li>Oculta.</li>
+<li>Publicada.</li>
+<li>Abierta.</li>
+<li>Cerrada.</li>
+</ol>
+</li>
 <li>Fecha de apertura de las plazas o de publicación.</li>
 <li>fecha de ocultamiento.</li>
 </ol>
