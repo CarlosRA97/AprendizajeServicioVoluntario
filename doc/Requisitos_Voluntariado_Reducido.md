@@ -174,10 +174,13 @@
 </ol>
 </li>
 <li>Puntuación de la actividad: Puntuacion de los usuarios.</li>
-<li>Datos de convalidación:<br>
-5. Método de convalidación.<br>
-6. Metodos de evaluacion.<br>
-7. Requisitos de convalidación.</li>
+<li>Datos de convalidación:
+<ol>
+<li>Método de convalidación.</li>
+<li>Metodos de evaluacion.</li>
+<li>Requisitos de convalidación.</li>
+</ol>
+</li>
 <li>Requisitos de participación.</li>
 <li>Número de plazas.</li>
 </ol>
