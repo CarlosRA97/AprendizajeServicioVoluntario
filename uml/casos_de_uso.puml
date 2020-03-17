@@ -11,7 +11,6 @@ actor Offer     as "Ofertante"
 (Solicitar la participacion a una actividad)    as RequestActivity
 (Evaluar la calidad de una actividad)           as EvaluateQuality
 (Evaluar la viabilidad de una actividad)        as EvaluateViability
-(Enviar correos o mensajes privados)            as SendMessages
 (Retirar la participacion de una actividad)     as RemoveParticipation
 (Comentar en una actividad)                     as CommentActivity
 (Modificar una actividad)                       as ModifyActivity
@@ -25,8 +24,6 @@ de un solicitante en una actividad"
 left to right direction
 
 ' Operaciones de Demandante
-Demand -down-> SendMessages
-
 Demand --> RegisterDemand
 Demand --> RequestActivity
 Demand --> ModifyPrefernces
@@ -36,8 +33,6 @@ RequestActivity ..> RemoveParticipation
 RequestActivity ..> CommentActivity
 
 ' Operaciones de Administrador
-Admin -down-> SendMessages
-
 Admin -right-> EvaluateViability
 ' Compartido con ofertante
 Admin --> ManageParticipation
@@ -45,8 +40,6 @@ Admin --> ModifyActivity
 Admin --> EvaluateActivityStatus
 
 ' Operaciones de Ofertante
-Offer -up-> SendMessages
-
 Offer -down-> RegisterOffer
 Offer -up-> CreateActivity
 
