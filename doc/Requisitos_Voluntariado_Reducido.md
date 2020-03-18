@@ -1,8 +1,13 @@
+---
+
+
+---
+
 <h1 id="requisitos.-grupo-a">Requisitos. Grupo A</h1>
-<h2 id="descripción-del-proyecto.">Descripción del proyecto.</h2>
+<h2 id="descripción-del-proyecto">Descripción del proyecto</h2>
 <p>La petición del cliente es el desarrollo de un foro interactivo para la participación en voluntariados, los cuales complementan los conocimientos teóricos de los participantes en relación a alguna asignatura o carrera.</p>
 <p>Un posible acercamiento a la idea del cliente sería una plataforma parecida a Job Today, en la que se ofrezcan los voluntarios y los usuarios puedan optar y evaluar estas ofertas.̵</p>
-<h2 id="elementos.">Elementos.</h2>
+<h2 id="elementos">Elementos</h2>
 <ul>
 <li>Actividades.
 <ul>
@@ -44,7 +49,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="requisitos-funcionales.">Requisitos funcionales.</h2>
+<h2 id="requisitos-funcionales">Requisitos funcionales</h2>
 <ol>
 <li>
 <p>Registrarse como solicitante.</p>
@@ -109,7 +114,7 @@
 </ol>
 <p><img src="https://raw.githubusercontent.com/CarlosRA97/AprendizajeServicioVoluntario/master/uml/casos_de_uso.png" alt="casos de uso"></p>
 <p>Casos de Uso</p>
-<h2 id="usuarios.">Usuarios.</h2>
+<h2 id="usuarios">Usuarios</h2>
 <p>Cada categoría de usuario dispondrá de una vista específica que cumpla con sus requisitos.</p>
 <p>Los usuarios se dividen en:</p>
 <h3 id="demandantes">Demandantes:</h3>
@@ -132,7 +137,7 @@
 <li>Correo electrónico.</li>
 <li>Numero de telefono.</li>
 </ol>
-<h3 id="datos-específicos-de-los-usuarios.">Datos específicos de los usuarios.</h3>
+<h3 id="datos-específicos-de-los-usuarios">Datos específicos de los usuarios</h3>
 <ol>
 <li>Apellidos.</li>
 <li>Edad.</li>
@@ -146,7 +151,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="datos-específicos-de-los-ofertantantes.">Datos específicos de los Ofertantantes.</h3>
+<h3 id="datos-específicos-de-los-ofertantantes">Datos específicos de los Ofertantantes</h3>
 <ol>
 <li>Identificador.(Dato que valida la existencia y la veracidad de la entidad)</li>
 <li>Localización de la empresa.</li>
