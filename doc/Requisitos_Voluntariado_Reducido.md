@@ -114,7 +114,7 @@ ONGs, empresas, ayuntamientos, …, Entidades que ofrecen la actividades.
 3. Otros métodos de contacto.
 4. Valoración derivada de las actividades
 
-## Actividades.
+## Actividades
 
 Se refiere a las ofertas presentadas a los usuarios.
 
@@ -122,7 +122,7 @@ Estas actividades podrán ser evaluadas por pos los usuarios demandantes en rela
 
 Las actividades se pueden convalidadas por créditos de la universidad y la evaluación a nivel académico de la actividad será llevada por un administrador de actividades.
 
-### Datos de la actividad.
+### Datos de la actividad
 
 1. Descripción: Texto que describe la actividad que se desarrolla.
 2. Horarios: Horarios en los que se desarrolla la actividad.
