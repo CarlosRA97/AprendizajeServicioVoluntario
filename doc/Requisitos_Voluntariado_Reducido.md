@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="requisitos.-grupo-a">Requisitos. Grupo A</h1>
 <h2 id="descripción-del-proyecto.">Descripción del proyecto.</h2>
 <p>La petición del cliente es el desarrollo de un foro interactivo para la participación en voluntariados, los cuales complementan los conocimientos teóricos de los participantes en relación a alguna asignatura o carrera.</p>
