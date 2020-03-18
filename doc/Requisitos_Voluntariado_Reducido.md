@@ -107,7 +107,7 @@ ONGs, empresas, ayuntamientos, …, Entidades que ofrecen la actividades.
     3. Conocimientos que desean poner en práctica
     4. Información sobre las actividades anteriores.
 
-### Datos específicos de los Ofertantantes
+### Datos específicos de los Ofertantes
 
 1. Identificador.(Dato que valida la existencia y la veracidad de la entidad)
 2. Localización de la empresa.
