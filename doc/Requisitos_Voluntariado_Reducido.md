@@ -96,7 +96,7 @@ ONGs, empresas, ayuntamientos, …, Entidades que ofrecen la actividades.
 3. Correo electrónico.
 4. Numero de telefono.
 
-### Datos específicos de los usuarios
+### Datos específicos de los Demandantes
 
 1. Apellidos.
 2. Edad.
