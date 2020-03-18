@@ -112,7 +112,7 @@
 </code></pre>
 </li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/CarlosRA97/AprendizajeServicioVoluntario/master/uml/casos_de_uso.png" alt="casos de uso"></p>
+<p><img src="/uml/casos_de_uso.png" alt="casos de uso"></p>
 <p>Casos de Uso</p>
 <h2 id="usuarios">Usuarios</h2>
 <p>Cada categoría de usuario dispondrá de una vista específica que cumpla con sus requisitos.</p>
