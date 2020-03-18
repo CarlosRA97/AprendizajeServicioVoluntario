@@ -4,7 +4,7 @@
 
 La petición del cliente es el desarrollo de un foro interactivo para la participación en voluntariados, los cuales complementan los conocimientos teóricos de los participantes en relación a alguna asignatura o carrera.
 
-Un posible acercamiento a la idea del cliente sería una plataforma parecida a Job Today, en la que se ofrezcan los voluntarios y los usuarios puedan optar y evaluar estas ofertas.̵
+Un posible acercamiento a la idea del cliente sería una plataforma parecida a Job Today, en la que se ofrezcan los voluntarios y los usuarios puedan optar y evaluar estas ofertas.
 
 ## Elementos
 
@@ -59,7 +59,7 @@ Un posible acercamiento a la idea del cliente sería una plataforma parecida a J
 
         Datos que los demandantes consideran relevantes para gestionar las recomendaciones de actividades o a la hora de evaluar sus solicitudes.
 
-![casos de uso](/uml/casos_de_uso.png)
+![casos de uso](https://raw.githubusercontent.com/CarlosRA97/AprendizajeServicioVoluntario/master/uml/casos_de_uso.png)
 
 Casos de Uso
 
