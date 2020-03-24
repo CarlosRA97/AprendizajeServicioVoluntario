@@ -1,10 +1,15 @@
 package model;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Actividad {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
     // Abierta, cerrado, por publicar
 	private String estado;
 	private String descripcion;
@@ -13,7 +18,9 @@ public class Actividad {
 	private Double horasInvertida;
 	private Integer calificacion;
 	private Integer numeroPlazas;
+	@OneToMany
 	private List<Evento> eventos;
+	@OneToOne
     private Convalidacion convalidacion;
 
     // Getters y Setters

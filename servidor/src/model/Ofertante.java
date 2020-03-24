@@ -1,12 +1,19 @@
 package model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Ofertante extends Usuario {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     private String nif; // Identificacion mediante NIF
     private String direccion;
-	private List<String> contacto;
+	@ElementCollection
+    private List<String> contacto;
 	private String calificacion; //Mediante una puntuacion de estrellas
 
     // Getters y Setters
