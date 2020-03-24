@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>model</OriginalElement>
+  <nodes>
+    <node x="0.0" y="213.0">model.Demandante</node>
+    <node x="229.0" y="399.0">model.Convalidacion</node>
+    <node x="255.0" y="224.0">model.Ofertante</node>
+    <node x="422.0" y="269.0">model.Administrador</node>
+    <node x="0.0" y="399.0">model.Actividad</node>
+    <node x="240.0" y="0.0">model.Usuario</node>
+    <node x="434.0" y="399.0">model.Evento</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.Administrador" target="model.Usuario">
+      <point x="0.0" y="-14.5" />
+      <point x="491.5" y="188.0" />
+      <point x="387.5" y="188.0" />
+      <point x="59.0" y="81.5" />
+    </edge>
+    <edge source="model.Demandante" target="model.Usuario">
+      <point x="0.0" y="-70.5" />
+      <point x="117.5" y="188.0" />
+      <point x="269.5" y="188.0" />
+      <point x="-59.0" y="81.5" />
+    </edge>
+    <edge source="model.Ofertante" target="model.Usuario">
+      <point x="0.0" y="-59.5" />
+      <point x="0.0" y="81.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="204.0" y="128.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
