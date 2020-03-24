@@ -3,34 +3,33 @@
   <ID>JAVA</ID>
   <OriginalElement>model</OriginalElement>
   <nodes>
-    <node x="430.0" y="501.0">model.Demandante</node>
-    <node x="1341.8839285714287" y="583.0089285714287">model.Convalidacion</node>
-    <node x="198.0" y="556.0">model.Ofertante</node>
-    <node x="777.0" y="0.0">model.Actividad</node>
-    <node x="0.0" y="710.0">model.Administrador</node>
-    <node x="182.5" y="0.0">model.Usuario</node>
-    <node x="0.0" y="997.0">model.Evento</node>
+    <node x="159.0" y="475.0">model.Demandante</node>
+    <node x="733.0" y="0.0">model.Convalidacion</node>
+    <node x="478.0" y="508.0">model.Ofertante</node>
+    <node x="0.0" y="651.0">model.Administrador</node>
+    <node x="188.5" y="0.0">model.Usuario</node>
+    <node x="0.0" y="901.0">model.Evento</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="model.Administrador" target="model.Usuario">
+      <point x="0.0" y="-14.5" />
+      <point x="69.5" y="450.0" />
+      <point x="228.5" y="450.0" />
+      <point x="-80.0" y="212.5" />
+    </edge>
     <edge source="model.Demandante" target="model.Usuario">
-      <point x="0.0" y="-225.5" />
-      <point x="581.0" y="476.0" />
-      <point x="385.0" y="476.0" />
-      <point x="81.0" y="225.5" />
+      <point x="0.0" y="-190.5" />
+      <point x="0.0" y="212.5" />
     </edge>
     <edge source="model.Ofertante" target="model.Usuario">
-      <point x="0.0" y="-170.5" />
-      <point x="0.0" y="225.5" />
-    </edge>
-    <edge source="model.Administrador" target="model.Usuario">
-      <point x="0.0" y="-16.5" />
-      <point x="89.0" y="476.0" />
-      <point x="223.0" y="476.0" />
-      <point x="-81.0" y="225.5" />
+      <point x="0.0" y="-157.5" />
+      <point x="583.0" y="450.0" />
+      <point x="388.5" y="450.0" />
+      <point x="80.0" y="212.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.6706586826347305" x="648.0" y="648.0" />
+  <settings layout="Hierarchic Group" zoom="0.48203125" x="478.0" y="630.0" />
   <SelectedNodes>
     <node>model.Convalidacion</node>
   </SelectedNodes>
