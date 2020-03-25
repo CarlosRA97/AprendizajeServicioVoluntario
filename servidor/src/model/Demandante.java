@@ -1,30 +1,25 @@
 package model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Demandante extends Usuario {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
     private Integer edad;
     private String ramaDeConocimiento;
+    @ElementCollection
     private List<String> datosDeInteres;
+    @OneToMany
     private List<Actividad> actividadesRealizadas;
+    @OneToMany
     private List<Actividad> actividadesCandidatas;
 
     // Getters y Setters
     //
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Integer getEdad() {
         return edad;

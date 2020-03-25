@@ -10,10 +10,11 @@ public class Actividad {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    // Abierta, cerrado, por publicar
-	private String estado;
+	private EstadoActividad estado;
 	private String descripcion;
+	@Temporal(TemporalType.DATE)
 	private Date fechaInicio;
+	@Temporal(TemporalType.DATE)
 	private Date fechaFinal;
 	private Double horasInvertida;
 	private Integer calificacion;
@@ -25,12 +26,21 @@ public class Actividad {
 
     // Getters y Setters
     //
-    public String getEstado() {
-        return estado;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setEstado(String estado) {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEstado(EstadoActividad estado) {
         this.estado = estado;
+    }
+
+    public EstadoActividad getEstado() {
+        return estado;
     }
 
     public String getDescripcion() {

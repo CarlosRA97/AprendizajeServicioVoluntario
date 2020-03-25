@@ -4,26 +4,39 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-class Usuario {
+@Inheritance(strategy = InheritanceType.JOINED)
+abstract class Usuario {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String nombre;
 	private String apellidos;
-	private String contraseña;
+	private String contrasena;
 	private String email;
 	private String telefono;
 	@OneToMany
     private List<Actividad> actividades;
 
-    // Getters y Setters
+	// Getters y Setters
     //
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
+    
+    public Long getId() {
+		return id;
+	}
 
-    public String getEmail() {
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public String getEmail() {
         return email;
     }
 

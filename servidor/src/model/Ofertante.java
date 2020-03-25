@@ -6,10 +6,6 @@ import java.util.List;
 @Entity
 public class Ofertante extends Usuario {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
-
     private String nif; // Identificacion mediante NIF
     private String direccion;
 	@ElementCollection
