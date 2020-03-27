@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sii@carlosra97.duckdns.org" uuid="b2b0c041-92e9-4955-999d-4d0997e77440">
+    <data-source source="LOCAL" name="sii@localhost" uuid="b5d274af-4bfa-4ee9-a83f-4e2329c20dc0">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://carlosra97.duckdns.org:33069/sii</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/sii</jdbc-url>
     </data-source>
   </component>
 </project>
