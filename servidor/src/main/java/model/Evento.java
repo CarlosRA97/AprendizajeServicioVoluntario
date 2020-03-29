@@ -10,7 +10,7 @@ import java.util.Date;
 public class Evento {
 
     @Id
-    private String id;
+    private Long id;
     @Temporal(TemporalType.DATE)
     private Date fecha;
 	private String descripcion;

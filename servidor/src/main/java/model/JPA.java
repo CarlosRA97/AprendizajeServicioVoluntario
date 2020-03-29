@@ -12,10 +12,14 @@ public class JPA {
      */
     public static void main(String[] args) {
     	
-    	Demandante user = new Demandante();
-    	user.setNombre("Carlos");
-    	user.setEmail("a@a.a");
-    	user.setEdad(23);
+//    	Demandante user = new Demandante();
+//    	user.setNombre("Carlos");
+//    	user.setEmail("a@a.a");
+//    	user.setEdad(23);
+
+        Actividad act = new Actividad();
+        act.setEstado(new EstadoActividad());
+        act.setTitulo("Jajajajaja Lol");
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("AprendizajeServicioVoluntario");
         EntityManager em = emf.createEntityManager();
@@ -23,7 +27,8 @@ public class JPA {
         
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.persist(user);
+//        em.persist(user);
+        em.persist(act);
         tx.commit();
         
         em.close();

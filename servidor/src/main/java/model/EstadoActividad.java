@@ -1,24 +1,63 @@
 package model;
-/*
-* Para gestionar las actividades, usamos los estados. Cada estado
-* informa a los jestores de la situacion de la acitividad
-* ENTRAMITE: Se encuentra en este estado cuando la actividad no a sido revisada por un administrador.
-    ACEPTADA: Indica que la actividad esta lista para su pubicacion
-    DENEGADA: La actividad no se puede llevar a vago por algun motibo
-    MODIFICADA: La actividad a sido modificada y por ende no es aceptada
-    OCULTA: La actividad a sido aceptada pero aun no se puede mostrar al publico
-    PUBLICADA: La actividad a sido aceptada y ya es visible para los usuarios
-    ABIERTA: Ya se pueden presentar los demandantes a esta actividad.
-    CERRADA: La actividad esta cerrada a finalizado su ciclo de vida.
-* */
-public enum EstadoActividad {
-    ENTRAMITE,
-    ACEPTADA,
-    DENEGADA,
-    MODIFICADA,
-    OCULTA,
-    PUBLICADA,
-    ABIERTA,
-    CERRADA
-}
 
+import jdk.jfr.Name;
+import jdk.jfr.Percentage;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+//@Table(name = "ESTADOACTIVIDAD")
+public class  EstadoActividad {
+
+    @Id
+    //@Column(name = "id")
+    private Long id;
+
+    @OneToOne
+    @MapsId
+    private  Actividad activiadad;
+
+    private Estado estado;
+    private String mensaje;
+
+    public EstadoActividad() {
+    }
+
+//    public EstadoActividad(Estado estado, String mensaje) {
+//        this.estado = estado;
+//        this.mensaje = mensaje;
+//    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Actividad getActiviadad() {
+        return activiadad;
+    }
+
+    public void setActiviadad(Actividad activiadad) {
+        this.activiadad = activiadad;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+}

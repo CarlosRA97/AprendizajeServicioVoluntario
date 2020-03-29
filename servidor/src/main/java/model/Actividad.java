@@ -5,11 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+
 public class Actividad {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    //@Column(name = "id")
     private Long id;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "activiadad")
 	private EstadoActividad estado;
 	private String titulo;
 	private String descripcion;
