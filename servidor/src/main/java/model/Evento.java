@@ -1,35 +1,18 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Evento {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    @Getter @Setter private Long id;
     @Temporal(TemporalType.DATE)
-    private Date fecha;
-	private String descripcion;
+    @Getter @Setter private Date fecha;
+	@Getter @Setter private String descripcion;
 
-    // Getters y Setters
-    //
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

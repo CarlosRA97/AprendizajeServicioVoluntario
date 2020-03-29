@@ -1,134 +1,34 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
-
 public class Actividad {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    //@Column(name = "id")
-    private Long id;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "activiadad")
-	private EstadoActividad estado;
-	private String titulo;
-	private String descripcion;
-	@Temporal(TemporalType.DATE)
-    private  Date fechaPublicada;
-    @Temporal(TemporalType.DATE)
-	private Date fechaAperturaPlazas;
-	@Temporal(TemporalType.DATE)
-	private Date fechaCierrePlazas;
-	private Double horasInvertida;
-	private Integer calificacion;
-	private Integer numeroPlazas;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Getter @Setter private Long id;
+    @OneToOne(cascade = CascadeType.ALL)
+	@Getter @Setter private EstadoActividad estado;
+	@Getter @Setter private String titulo;
+	@Getter @Setter private String descripcion;
+	@Getter @Setter private String imagen; // Base-64
+    @Getter @Setter private Date fechaPublicada;
+	@Getter @Setter private Date fechaAperturaPlazas;
+	@Getter @Setter private Date fechaCierrePlazas;
+	@Getter @Setter private Double horasInvertida;
+	@Getter @Setter private Integer calificacion;
+	@Getter @Setter private Integer numeroPlazas;
 	@OneToMany
-	private List<Evento> eventos;
+	@Getter @Setter private List<Evento> eventos;
 	@OneToMany
-    private List<Etiqueta> clasificacion;
+    @Getter @Setter private List<Etiqueta> clasificacion;
 	@OneToOne
-    private Convalidacion convalidacion;
+    @Getter @Setter private Convalidacion convalidacion;
 
-
-    // Getters y Setters
-    //
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setEstado(EstadoActividad estado) {
-        this.estado = estado;
-    }
-
-    public EstadoActividad getEstado() {
-        return estado;
-    }
-
-    public String getTitulo() { return titulo; }
-
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-
-    public Date getFechaPublicada() {
-        return fechaPublicada;
-    }
-
-    public void setFechaPublicada(Date fechaPublicada) {
-        this.fechaPublicada = fechaPublicada;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Date getFechaAperturaPlazas() {
-        return fechaAperturaPlazas;
-    }
-
-    public void setFechaAperturaPlazas(Date fechaAperturaPlazas) {
-        this.fechaAperturaPlazas = fechaAperturaPlazas;
-    }
-
-    public Date getFechaCierrePlazas() {
-        return fechaCierrePlazas;
-    }
-
-    public void setFechaCierrePlazas(Date fechaCierrePlazas) {
-        this.fechaCierrePlazas = fechaCierrePlazas;
-    }
-
-    public Double getHorasInvertida() {
-        return horasInvertida;
-    }
-
-    public void setHorasInvertida(Double horasInvertida) {
-        this.horasInvertida = horasInvertida;
-    }
-
-    public Integer getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Integer calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public Integer getNumeroPlazas() {
-        return numeroPlazas;
-    }
-
-    public void setNumeroPlazas(Integer numeroPlazas) {
-        this.numeroPlazas = numeroPlazas;
-    }
-
-    public List<Evento> getEventos() {
-        return eventos;
-    }
-
-    public void setEventos(List<Evento> eventos) {
-        this.eventos = eventos;
-    }
-
-    public List<Etiqueta> getClasificacion() { return clasificacion; }
-
-    public void setClasificacion(List<Etiqueta> clasificacion) { this.clasificacion = clasificacion; }
-
-    public Convalidacion getConvalidacion() {
-        return convalidacion;
-    }
-
-    public void setConvalidacion(Convalidacion convalidacion) {
-        this.convalidacion = convalidacion;
-    }
 }
