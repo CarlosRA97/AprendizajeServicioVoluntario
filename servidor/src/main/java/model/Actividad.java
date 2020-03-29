@@ -14,9 +14,11 @@ public class Actividad {
 	private String titulo;
 	private String descripcion;
 	@Temporal(TemporalType.DATE)
-	private Date fechaInicio;
+    private  Date fechaPublicada;
+    @Temporal(TemporalType.DATE)
+	private Date fechaAperturaPlazas;
 	@Temporal(TemporalType.DATE)
-	private Date fechaFinal;
+	private Date fechaCierrePlazas;
 	private Double horasInvertida;
 	private Integer calificacion;
 	private Integer numeroPlazas;
@@ -51,6 +53,14 @@ public class Actividad {
 
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
+    public Date getFechaPublicada() {
+        return fechaPublicada;
+    }
+
+    public void setFechaPublicada(Date fechaPublicada) {
+        this.fechaPublicada = fechaPublicada;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -59,20 +69,20 @@ public class Actividad {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public Date getFechaAperturaPlazas() {
+        return fechaAperturaPlazas;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setFechaAperturaPlazas(Date fechaAperturaPlazas) {
+        this.fechaAperturaPlazas = fechaAperturaPlazas;
     }
 
-    public Date getFechaFinal() {
-        return fechaFinal;
+    public Date getFechaCierrePlazas() {
+        return fechaCierrePlazas;
     }
 
-    public void setFechaFinal(Date fechaFinal) {
-        this.fechaFinal = fechaFinal;
+    public void setFechaCierrePlazas(Date fechaCierrePlazas) {
+        this.fechaCierrePlazas = fechaCierrePlazas;
     }
 
     public Double getHorasInvertida() {
