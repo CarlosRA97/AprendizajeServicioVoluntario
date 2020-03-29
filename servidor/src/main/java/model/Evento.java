@@ -10,7 +10,6 @@ public class Evento {
     @Id
     private String id;
     private Date fecha;
-	private String hora;
 	private String descripcion;
 
     // Getters y Setters
@@ -21,14 +20,6 @@ public class Evento {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
     }
 
     public String getDescripcion() {
