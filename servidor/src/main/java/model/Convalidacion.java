@@ -14,7 +14,7 @@ public class Convalidacion {
     private String descripcion; // Descripcion del metodo de evaluacion
     private String evaluacion; // Guia por la cual se rige la calificacion
     private Double calificacion; // Nota de 0 a 10
-    private Double creditosMaximo;
+    private Double creditosMaximo; //Numero de maximo de creditos
 
     // Getters y Setters
     //

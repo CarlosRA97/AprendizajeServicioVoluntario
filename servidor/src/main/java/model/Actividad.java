@@ -11,6 +11,7 @@ public class Actividad {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 	private EstadoActividad estado;
+	private String titulo;
 	private String descripcion;
 	@Temporal(TemporalType.DATE)
 	private Date fechaInicio;
@@ -21,8 +22,11 @@ public class Actividad {
 	private Integer numeroPlazas;
 	@OneToMany
 	private List<Evento> eventos;
+	@OneToMany
+    private List<Etiqueta> clasificacion;
 	@OneToOne
     private Convalidacion convalidacion;
+
 
     // Getters y Setters
     //
@@ -42,6 +46,10 @@ public class Actividad {
     public EstadoActividad getEstado() {
         return estado;
     }
+
+    public String getTitulo() { return titulo; }
+
+    public void setTitulo(String titulo) { this.titulo = titulo; }
 
     public String getDescripcion() {
         return descripcion;
@@ -98,6 +106,10 @@ public class Actividad {
     public void setEventos(List<Evento> eventos) {
         this.eventos = eventos;
     }
+
+    public List<Etiqueta> getClasificacion() { return clasificacion; }
+
+    public void setClasificacion(List<Etiqueta> clasificacion) { this.clasificacion = clasificacion; }
 
     public Convalidacion getConvalidacion() {
         return convalidacion;
