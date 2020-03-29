@@ -1,0 +1,48 @@
+@startuml estados de actividad
+
+' Estados principales
+state EnTramite     : La actividad esta siendo \nevaluada por el administrador.
+state Modificada    : La activida ha sido modificada \ny debe ser reevaluada \n por el ofertante.
+state Denegada      : La activida no es apta para su implementacion.
+state Cerrada       : La activida ha llenado todas sus plazas o las plazas han sido cerradas.
+
+' Estados de modificacion
+state ModificacionEnTramite : La midificacion esta siendo \nevaluada por el administrador.
+state ModificacionAplicada : La modificacin es visible para los demandantes.
+state ModificacionDenegada : La modificacion no a sido aceptada.
+
+' Diagrama Principal
+[*] --> EnTramite : Creacion de una actividad
+EnTramite -left-> Denegada
+EnTramite -right-> Modificada : El Administrador ha \nmodificado la actividad
+EnTramite --> EnCurso : La actividad ha sido aceptada \npor el Administrador y Ofertante
+
+Modificada -left-> EnTramite : El Ofertante ha aceptado \ny/o modificado la actividad
+
+state EnCurso {
+    state Aceptada      : La activida esta aprobada \npara su publicacion.
+    state Oculta        : La activida no es visible para los demandantes.
+    state Publicada     : La actividad es visible para los demandantes.
+    state Abierta       : Las plazas de la actividad \nestan abiertas para los demandantes.
+
+    [*] --> Aceptada
+    Aceptada --> Oculta : No ha llegado \nla fecha de publicacion
+    Aceptada --> Publicada : No se ha indicado fecha de publicacion \no dicha fecha se a vencido
+
+    Oculta --> Publicada : La fecha de publicacion a vencido
+
+    Publicada --> Abierta : Ha llegado la fecha de apertura de plazas
+}
+
+Abierta --> Cerrada : Ha llegado la fecha de cierre de plazas \no las plazas estan llenas
+
+
+Modificada --> [*] : El Ofertante a cancelado la actividad
+Cerrada --> [*]
+Denegada --> [*]
+
+EnCurso --> ModificacionEnTramite : Se modifica actividad
+ModificacionEnTramite --> ModificacionAplicada
+ModificacionEnTramite --> ModificacionDenegada
+
+@enduml
