@@ -29,5 +29,7 @@ public class JPA {
         em.close();
         emf.close();
     }
+
+    /* Registro de usuario */
     
 }
