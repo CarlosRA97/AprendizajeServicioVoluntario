@@ -8,6 +8,7 @@
         <class>model.Evento</class>
         <class>model.Ofertante</class>
         <class>model.Usuario</class>
+        <class>model.Etiqueta</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
