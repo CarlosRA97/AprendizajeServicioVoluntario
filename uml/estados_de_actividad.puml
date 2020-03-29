@@ -1,4 +1,4 @@
-@startuml estados de actividad
+@startuml estados_de_actividad
 
 ' Estados principales
 state EnTramite     : La actividad esta siendo \nevaluada por el administrador.
