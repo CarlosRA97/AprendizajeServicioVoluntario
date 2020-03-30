@@ -14,7 +14,7 @@
         <class>model.Solicitud</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://carlosra97.duckdns.org:33069/sii"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.99.100:3306/sii"/>
             <property name="javax.persistence.jdbc.user" value="siiuser"/>
             <property name="javax.persistence.jdbc.password" value="siipassword"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
