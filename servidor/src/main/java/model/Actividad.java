@@ -17,7 +17,7 @@ public class Actividad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
     @OneToOne(cascade = CascadeType.ALL)
-	private EstadoActividad estado;
+	private Estado estado;
     private String titulo;
     private String descripcion;
     private String imagen; // Base-64

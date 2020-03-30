@@ -18,12 +18,12 @@ public class JPA {
 //    	user.setEdad(23);
 
         Actividad act = new Actividad();
-        act.setEstado(new EstadoActividad(Estado.ABIERTA, "Hola"));
+        act.setEstado(new Estado(EstadoType.ABIERTA, "Hola"));
         act.setConvalidacion(new Convalidacion());
         act.setTitulo("Jajajajaja Lol");
 
         Actividad act2 = new Actividad();
-        act2.setEstado(new EstadoActividad(Estado.ACEPTADA, "adios"));
+        act2.setEstado(new Estado(EstadoType.ACEPTADA, "adios"));
         act2.setTitulo("wooooo");
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("AprendizajeServicioVoluntario");
@@ -37,7 +37,7 @@ public class JPA {
         tx.commit();
 
         tx.begin();
-        act.getEstado().setEstado(Estado.CERRADA);
+        act.getEstado().setEstadoType(EstadoType.CERRADA);
         em.merge(act);
         tx.commit();
 
