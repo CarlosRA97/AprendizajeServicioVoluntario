@@ -7,13 +7,16 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
+@Getter @Setter
+@EqualsAndHashCode
 public class EstadoActividad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    @Getter @Setter private Long id;
-    @Getter @Setter private Estado estado;
-    @Getter @Setter private String mensaje;
+    private Long id;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
+    private String mensaje;
 
     public EstadoActividad(Estado estado) {
         this.estado = estado;

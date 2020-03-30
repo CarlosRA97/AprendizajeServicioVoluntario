@@ -1,5 +1,6 @@
 package model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,17 +9,19 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Getter @Setter
+@EqualsAndHashCode
 abstract class Usuario {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Getter @Setter private Long id;
-    @Getter @Setter private String nombre;
-	@Getter @Setter private String apellidos;
-	@Getter @Setter private String contrasena;
-	@Getter @Setter private String email;
-	@Getter @Setter private String telefono;
+    private Long id;
+    private String nombre;
+	private String apellidos;
+	private String contrasena;
+	private String email;
+	private String telefono;
 	@OneToMany
-    @Getter @Setter private List<Actividad> actividades;
+    private List<Actividad> actividades;
 
 }

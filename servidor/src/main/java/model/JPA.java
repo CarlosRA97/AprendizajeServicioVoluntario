@@ -19,6 +19,7 @@ public class JPA {
 
         Actividad act = new Actividad();
         act.setEstado(new EstadoActividad(Estado.ABIERTA, "Hola"));
+        act.setConvalidacion(new Convalidacion());
         act.setTitulo("Jajajajaja Lol");
 
         Actividad act2 = new Actividad();
@@ -44,7 +45,6 @@ public class JPA {
         em.persist(act2);
         tx.commit();
 
-        
         em.close();
         emf.close();
     }

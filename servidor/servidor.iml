@@ -6,7 +6,8 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="AprendizajeServicioVoluntario" />
+          <factory-entry name="AprendizajeServicioVoluntario" value="b5d274af-4bfa-4ee9-a83f-4e2329c20dc0" />
+          <factory-entry name="AprendizajeServicioVoluntario2" value="42c00a25-bbd7-4aad-a111-9a39bb70b670" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />

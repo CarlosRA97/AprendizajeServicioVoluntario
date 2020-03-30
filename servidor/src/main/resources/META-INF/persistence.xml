@@ -10,9 +10,10 @@
         <class>model.Usuario</class>
         <class>model.Etiqueta</class>
         <class>model.EstadoActividad</class>
+        <class>model.Comentario</class>
+        <class>model.Solicitud</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
-            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://carlosra97.duckdns.org:33069/sii"/>
             <property name="javax.persistence.jdbc.user" value="siiuser"/>
             <property name="javax.persistence.jdbc.password" value="siipassword"/>

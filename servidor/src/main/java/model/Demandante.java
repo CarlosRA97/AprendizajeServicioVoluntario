@@ -1,5 +1,6 @@
 package model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,17 +11,15 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 @Entity
+@Getter @Setter
+@EqualsAndHashCode
 public class Demandante extends Usuario {
 
-    @Getter @Setter private Integer edad;
-    @Getter @Setter private String ramaDeConocimiento;
-    @ElementCollection
-    @Getter @Setter private List<String> datosDeInteres;
+    private Integer edad;
     @OneToMany
-    @Getter @Setter private List<Actividad> actividadesRealizadas;
+    private List<Etiqueta> intereses;
+    private String datosDeInteres;
     @OneToMany
-    @Getter @Setter private List<Actividad> actividadesCandidatas;
-    @OneToMany
-    @Getter @Setter private List<Convalidacion> convalidacions;
+    private List<Solicitud> solicitudes;
 
 }

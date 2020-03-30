@@ -34,25 +34,25 @@ Un posible acercamiento a la idea del cliente sería una plataforma parecida a J
 3. Crear una actividad.
 4. Modificar una actividad.
 5. Evaluar la viabilidad una actividad.
-6. Gestionar una actividad.
-7. Modificar el estado de una actividad.
-	> Se cuenta con todos los datos de de la actividad.
-	
-	> Los distintos estados se muestran más adelante en el documento
+6. Gestionar una actividad. (Cualidad de los Administradores)
+    1. Modificar el estado de una actividad.
+        > Se cuenta con todos los datos de de la actividad.
+        
+        > Los distintos estados se muestran más adelante en el documento
 
-9. Evaluar la calidad de una actividad.
-	> Evaluación personal del solicitante hacia la actividad mediante puntuación sesgada.
+7. Evaluar la calidad de una actividad.
+    > Evaluación personal del solicitante hacia la actividad mediante puntuación sesgada.
 
-10. Comentar en una actividad.
-11. Solicitar la participación a una actividad.
-12. Retirar la participación de una actividad.
-13. Gestiona la participación de un solicitante en una actividad.
+8. Comentar en una actividad.
+9. Solicitar la participación a una actividad.
+10. Retirar la participación de una actividad.
+11. Gestiona la participación de un solicitante en una actividad.
     1. Evaluación del participante(en caso de que sea necesario).
 	    > Informes, ejercicios, ...
 	    
     2. Aceptación del participante.
     3. Expulsión del participante.
-14. Modificar preferencias del demandante.
+12. Modificar preferencias del demandante.
 	> Datos que los demandantes consideran relevantes para gestionar las recomendaciones de actividades o a la hora de evaluar sus solicitudes.
 
 ![casos de uso](https://raw.githubusercontent.com/CarlosRA97/AprendizajeServicioVoluntario/master/uml/casos_de_uso.png)
