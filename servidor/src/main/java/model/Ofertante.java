@@ -11,11 +11,16 @@ import java.util.List;
 @Getter @Setter
 @EqualsAndHashCode
 public class Ofertante extends Usuario {
-
-    private String nif; // Identificacion mediante NIF
+    /** Identificacion mediante numero de identificacion fiscal */
+    private String nif;
+    /** Direccion fisica */
     private String direccion;
 	@ElementCollection
+    /**
+     * Mas metodos de contactos o contactos exta
+     * Ej: Contactos de trabajadores relacionados */
     private List<String> contacto;
-	private String calificacion; //Mediante una puntuacion de estrellas
+    /** Calificacion de calidad */
+	private Double calificacion;
 
 }
