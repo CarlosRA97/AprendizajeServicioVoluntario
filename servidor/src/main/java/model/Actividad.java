@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
+
 @Entity
 @Getter @Setter
 @EqualsAndHashCode
@@ -24,12 +25,19 @@ public class Actividad {
 
 	@OneToMany
 	private List<Comentario> comentarios;
-	/** Fecha en la que se deve de acer visible la actividad */
-	private Date fechaPublicada;
+
+	/**
+	 * Fecha en la que se debe de hacer visible la actividad
+	 * */
+	private Date fechaPublicacion;
 	private Date fechaAperturaPlazas;
 	private Date fechaCierrePlazas;
 
 	private Double horasInvertida;
+
+	/**
+	 * Suma de la cantidad de estrellas que los demandantes le asignan a la actividad
+	 * */
 	private Integer calificacion;
 	private Integer numeroPlazas;
 	@OneToMany

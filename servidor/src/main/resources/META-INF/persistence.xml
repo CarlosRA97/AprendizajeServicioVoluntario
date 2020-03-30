@@ -14,13 +14,17 @@
         <class>model.Solicitud</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.99.100:3306/sii"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://carlosra97.duckdns.org:33069/sii"/>
             <property name="javax.persistence.jdbc.user" value="siiuser"/>
             <property name="javax.persistence.jdbc.password" value="siipassword"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
-            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="javax.persistence.sql-load-script-source" value="META-INF/carga.sql"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="both"/>
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <property name="eclipselink.application-location" value="./servidor/src/main/resources/META-INF"/>
+            <property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL.sql"/>
+            <property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL.sql"/>
         </properties>
     </persistence-unit>
 </persistence>

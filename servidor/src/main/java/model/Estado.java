@@ -6,11 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+
 /**
  * La clase Estado relaciona el estado de una actividad o de usna solicitud con un mensaje
  * El mensaje no es obligatorio
  **/
-
 @Entity
 @NoArgsConstructor
 @Getter @Setter
@@ -21,16 +22,39 @@ public class Estado {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private EstadoType estadoType;
+    private Type estadoType;
     private String mensaje;
 
-    public Estado(EstadoType estadoType) {
+    public Estado(Type estadoType) {
         this.estadoType = estadoType;
     }
 
-    public Estado(EstadoType estadoType, String mensaje) {
+    public Estado(Type estadoType, String mensaje) {
         this(estadoType);
         this.mensaje = mensaje;
+    }
+
+    /**
+     * Para gestionar las actividades, usamos los estados. Cada estado
+     * informa a los jestores de la situacion de la acitividad
+     * ENTRAMITE: Se encuentra en este estado cuando la actividad no a sido revisada por un administrador.
+     * ACEPTADA: Indica que la actividad esta lista para su pubicacion
+     * DENEGADA: La actividad no se puede llevar a vago por algun motibo
+     * MODIFICADA: La actividad a sido modificada y por ende no es aceptada
+     * OCULTA: La actividad a sido aceptada pero aun no se puede mostrar al publico
+     * PUBLICADA: La actividad a sido aceptada y ya es visible para los usuarios
+     * ABIERTA: Ya se pueden presentar los demandantes a esta actividad.
+     * CERRADA: La actividad esta cerrada a finalizado su ciclo de vida.
+     * */
+    public enum Type {
+        ENTRAMITE,
+        ACEPTADA,
+        DENEGADA,
+        MODIFICADA,
+        OCULTA,
+        PUBLICADA,
+        ABIERTA,
+        CERRADA
     }
 
 }

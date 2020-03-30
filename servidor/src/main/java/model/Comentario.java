@@ -5,10 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-/** Se uticiza para medi la safisfacion de una actividad */
+
+
+/**
+ * Se utiliza para medir la satisfacion de una actividad
+ * */
 @Entity
-@Getter @Setter
-@EqualsAndHashCode
+@Getter @Setter @EqualsAndHashCode
 public class Comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
