@@ -6,7 +6,9 @@ import java.util.Date;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * La clase eventos se utiliza para gestuiona los calendarios de las actividades
+ * */
 @Entity
 @Getter @Setter
 @EqualsAndHashCode

@@ -6,7 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+/**
+ * La clase Estado relaciona el estado de una actividad o de usna solicitud con un mensaje
+ * El mensaje no es obligatorio
+ **/
 
 @Entity
 @NoArgsConstructor

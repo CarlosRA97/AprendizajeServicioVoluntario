@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+/** Se uticiza para medi la safisfacion de una actividad */
 @Entity
 @Getter @Setter
 @EqualsAndHashCode

@@ -1,6 +1,6 @@
 package model;
 
-/*
+/**
 * Para gestionar las actividades, usamos los estados. Cada estado
 * informa a los jestores de la situacion de la acitividad
 * ENTRAMITE: Se encuentra en este estado cuando la actividad no a sido revisada por un administrador.

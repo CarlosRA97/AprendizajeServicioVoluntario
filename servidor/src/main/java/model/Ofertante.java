@@ -6,7 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-
+/**
+ * La clase Ofertante almacena la informacion extra del demandante
+ **/
 @Entity
 @Getter @Setter
 @EqualsAndHashCode

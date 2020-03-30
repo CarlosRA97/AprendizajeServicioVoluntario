@@ -24,7 +24,7 @@ public class Actividad {
 
 	@OneToMany
 	private List<Comentario> comentarios;
-
+	/** Fecha en la que se deve de acer visible la actividad */
 	private Date fechaPublicada;
 	private Date fechaAperturaPlazas;
 	private Date fechaCierrePlazas;
