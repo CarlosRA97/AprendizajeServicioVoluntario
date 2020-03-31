@@ -1,6 +1,3 @@
-## JavaDocs
-[Documentacion java](https://aprendizaje-servicio-voluntario.us)
-
 ## Documentacion
 [Requisitos Voluntariado Reducido](/docs/md/Requisitos_Voluntariado_Reducido.md)
 
