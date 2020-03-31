@@ -1,5 +1,5 @@
 ## JavaDoc
-[Documentacion Java](CarlosRA97.github.io/AprendizajeServicioVoluntario)
+[Documentacion Java](CarlosRA97.github.io)
 
 ## Documentacion
 [Requisitos Voluntariado Reducido](/docs/md/Requisitos_Voluntariado_Reducido.md)
