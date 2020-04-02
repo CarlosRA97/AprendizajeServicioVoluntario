@@ -41,8 +41,6 @@ Modificada --> [*] : El Ofertante a cancelado la actividad
 Cerrada --> [*]
 Denegada --> [*]
 
-EnCurso --> ModificacionEnTramite : Se modifica actividad
-ModificacionEnTramite --> ModificacionAplicada
-ModificacionEnTramite --> ModificacionDenegada
+
 
 @enduml
