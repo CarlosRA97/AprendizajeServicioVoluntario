@@ -1,0 +1,90 @@
+@startuml
+caption Diagrama de navegacion
+title Demandante
+
+skinparam linetype ortho
+'skinparam linetype direct
+
+
+Inicio : index.html
+
+    'Actividades
+Actividades_Ofertadas :
+Informacion_actividad :
+Categorias :
+
+
+    'Usuarios
+Inicio_Sesion :
+Registro_Usuario :
+        'Es la pagina profile para rellenar
+Formulario_Inicio :
+        'Es la pagina que profile_view
+Administracion_Usuario:
+
+
+
+[*] ---> Inicio
+    'General
+
+    'Movimiento validos desde el index
+Inicio ---> Actividades_Ofertadas
+Inicio --> Informacion_actividad
+Inicio --> Inicio_Sesion : Si el usuario no esta iniciado
+Inicio -> Registro_Usuario : Si el usuario no esta iniciado
+    ' _________Falata añadir el comentario_________
+Inicio --> Categorias
+    'Usuario iniciado
+Inicio -up-> Administracion_Usuario : Si el usuario esta registrado
+
+'    'Movimiento validos desde activities
+'    'El boton actual de Busccar actividades sobra XD
+Actividades_Ofertadas -down-> Informacion_actividad
+
+Actividades_Ofertadas -left-> Actividades_Ofertadas
+Actividades_Ofertadas ---> Registro_Usuario : Si el usuario no esta iniciado
+Actividades_Ofertadas -up--> Inicio_Sesion : Si el susario no esta iniciado
+Actividades_Ofertadas --> Inicio
+'    'Usuario rejistrado
+Actividades_Ofertadas ---> Administracion_Usuario : Si el usuario esta rejitratado
+'
+'    'Movimiento validos desde activitie\x
+Informacion_actividad --> Actividades_Ofertadas
+Informacion_actividad --> Registro_Usuario : Si el usuario no esta iniciado
+Informacion_actividad --> Inicio_Sesion : Si el susario no esta iniciado
+Informacion_actividad --> Inicio
+'    'Usuario rejistrado
+Informacion_actividad --> Administracion_Usuario : Si el usuario esta rejitratado
+'
+    'Movimiento validos desde _up
+Registro_Usuario --> Inicio
+Registro_Usuario --> Actividades_Ofertadas
+Registro_Usuario --> Formulario_Inicio : Cuando se rejistra\ndeve de rellenarlo
+Registro_Usuario --> Inicio_Sesion
+
+    'Movimiento validos desde _in
+Inicio_Sesion --> Inicio
+Inicio_Sesion --> Actividades_Ofertadas
+Inicio_Sesion --> Formulario_Inicio
+Inicio_Sesion --> Registro_Usuario
+
+Formulario_Inicio --> Inicio
+Formulario_Inicio --> Actividades_Ofertadas
+Formulario_Inicio --> Administracion_Usuario
+
+Categorias --> Actividades_Ofertadas
+Categorias --> Registro_Usuario : Si el usuario no esta iniciado
+Categorias --> Inicio_Sesion : Si el susario no esta iniciado
+Categorias --> Inicio
+
+
+
+    'Movimiento validos desde profile_view
+Administracion_Usuario --> Inicio
+Administracion_Usuario --> Actividades_Ofertadas
+Administracion_Usuario --> Informacion_actividad
+Administracion_Usuario --> Formulario_Inicio
+    'Si alfinal es una pajina a parte
+    'Administracion_Usuario --> Comentarios
+
+@enduml
