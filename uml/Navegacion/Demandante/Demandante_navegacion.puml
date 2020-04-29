@@ -1,90 +1,72 @@
 @startuml
+note "Desde cualquier pagina\nse puede usarse la\nbarra de navegacion" as N1
+
 caption Diagrama de navegacion
 title Demandante
 
-skinparam linetype ortho
-'skinparam linetype direct
+hide empty description
 
+State Barra_navegacion
 
-Inicio : index.html
+State Inicio : direccion.xhtml
 
-    'Actividades
-Actividades_Ofertadas :
-Informacion_actividad :
-Categorias :
+State Actividades_ofertas : direccion.xhtml
+State Informacion_actividad : direccion.xhtml
+State Categorias: direccion.xhtml
 
-
-    'Usuarios
-Inicio_Sesion :
-Registro_Usuario :
-        'Es la pagina profile para rellenar
-Formulario_Inicio :
-        'Es la pagina que profile_view
-Administracion_Usuario:
-
-
-
-[*] ---> Inicio
-    'General
-
-    'Movimiento validos desde el index
-Inicio ---> Actividades_Ofertadas
-Inicio --> Informacion_actividad
-Inicio --> Inicio_Sesion : Si el usuario no esta iniciado
-Inicio -> Registro_Usuario : Si el usuario no esta iniciado
-    ' _________Falata añadir el comentario_________
-Inicio --> Categorias
-    'Usuario iniciado
-Inicio -up-> Administracion_Usuario : Si el usuario esta registrado
-
-'    'Movimiento validos desde activities
-'    'El boton actual de Busccar actividades sobra XD
-Actividades_Ofertadas -down-> Informacion_actividad
-
-Actividades_Ofertadas -left-> Actividades_Ofertadas
-Actividades_Ofertadas ---> Registro_Usuario : Si el usuario no esta iniciado
-Actividades_Ofertadas -up--> Inicio_Sesion : Si el susario no esta iniciado
-Actividades_Ofertadas --> Inicio
-'    'Usuario rejistrado
-Actividades_Ofertadas ---> Administracion_Usuario : Si el usuario esta rejitratado
+'State Sesion_iniciada {
+    State Panel_control : direccion.xhtml
+    State Formulario_datos : direccion.xhtml
 '
-'    'Movimiento validos desde activitie\x
-Informacion_actividad --> Actividades_Ofertadas
-Informacion_actividad --> Registro_Usuario : Si el usuario no esta iniciado
-Informacion_actividad --> Inicio_Sesion : Si el susario no esta iniciado
-Informacion_actividad --> Inicio
-'    'Usuario rejistrado
-Informacion_actividad --> Administracion_Usuario : Si el usuario esta rejitratado
+'    [*] -> Panel_control
+'    Panel_control -> Formulario_datos
+'}
+
+State fork_Inicio <<fork>>
+State Inicio_sesion : direccion.xhtml
+State Registro_usuario : direccion.xhtml
+
+State fork_Actividad <<fork>>
+State fork_Actividad_Ususario <<fork>>
+
+'State fork_BarraNabegacion <<fork>>
 '
-    'Movimiento validos desde _up
-Registro_Usuario --> Inicio
-Registro_Usuario --> Actividades_Ofertadas
-Registro_Usuario --> Formulario_Inicio : Cuando se rejistra\ndeve de rellenarlo
-Registro_Usuario --> Inicio_Sesion
+'fork_BarraNabegacion -down> Actividades_ofertas
+'fork_BarraNabegacion -down> Inici
 
-    'Movimiento validos desde _in
-Inicio_Sesion --> Inicio
-Inicio_Sesion --> Actividades_Ofertadas
-Inicio_Sesion --> Formulario_Inicio
-Inicio_Sesion --> Registro_Usuario
+[*] --> Inicio
+Inicio -> fork_Inicio : Usuario\nno inicializado
+Inicio -> Panel_control :  Usuario\ninicializado
+Inicio -right-> fork_Actividad
 
-Formulario_Inicio --> Inicio
-Formulario_Inicio --> Actividades_Ofertadas
-Formulario_Inicio --> Administracion_Usuario
+Barra_navegacion -> fork_Inicio : Usuario\nno inicializado
+Barra_navegacion --> Actividades_ofertas
+Barra_navegacion -> Panel_control : Usuario\ninicializado
 
-Categorias --> Actividades_Ofertadas
-Categorias --> Registro_Usuario : Si el usuario no esta iniciado
-Categorias --> Inicio_Sesion : Si el susario no esta iniciado
-Categorias --> Inicio
+fork_Inicio -> Registro_usuario
+fork_Inicio --> Inicio_sesion
 
 
+'Inicio_sesion -> Sesion_iniciada
+Inicio_sesion --> Panel_control
+Inicio_sesion -> Registro_usuario
 
-    'Movimiento validos desde profile_view
-Administracion_Usuario --> Inicio
-Administracion_Usuario --> Actividades_Ofertadas
-Administracion_Usuario --> Informacion_actividad
-Administracion_Usuario --> Formulario_Inicio
-    'Si alfinal es una pajina a parte
-    'Administracion_Usuario --> Comentarios
+Registro_usuario --> Formulario_datos
+Registro_usuario -> Inicio_sesion
+
+Panel_control -> Formulario_datos
+Panel_control --> fork_Actividad_Ususario : Actividade\ndel usuario
+
+fork_Actividad_Ususario --> Actividades_ofertas
+fork_Actividad_Ususario --> Informacion_actividad
+
+fork_Actividad --> Categorias
+fork_Actividad --> Actividades_ofertas
+fork_Actividad --> Informacion_actividad
+
+Categorias -> Actividades_ofertas
+
+Actividades_ofertas -> Informacion_actividad
+
 
 @enduml
