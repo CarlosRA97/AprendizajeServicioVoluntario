@@ -2,11 +2,13 @@
 note "Desde cualquier pagina\nse puede usarse la\nbarra de navegacion" as N1
 
 caption Diagrama de navegacion
-title Demandante
+title Administrador
 
 hide empty description
 
 State Barra_navegacion
+
+State Gestion_actividad : direccion.xhtml
 
 State Inicio : direccion.xhtml
 
@@ -55,7 +57,7 @@ Registro_usuario --> Formulario_datos
 Registro_usuario -left> Inicio_sesion
 
 Panel_control -> Formulario_datos
-Panel_control --> fork_Actividad_Ususario : Actividade\ndel usuario
+Panel_control --> fork_Actividad_Ususario : Actividade\na gestionar
 
 fork_Actividad_Ususario --> Actividades_ofertas
 fork_Actividad_Ususario --> Informacion_actividad
@@ -63,6 +65,8 @@ fork_Actividad_Ususario --> Informacion_actividad
 fork_Actividad --> Categorias
 fork_Actividad --> Actividades_ofertas
 fork_Actividad --> Informacion_actividad
+
+Informacion_actividad --> Gestion_actividad : Uniario\nadministrador\niniciado
 
 Categorias -> Actividades_ofertas
 

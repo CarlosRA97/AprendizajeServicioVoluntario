@@ -2,11 +2,14 @@
 note "Desde cualquier pagina\nse puede usarse la\nbarra de navegacion" as N1
 
 caption Diagrama de navegacion
-title Demandante
+title Ofertante
 
 hide empty description
 
 State Barra_navegacion
+
+State Crear_actividad : direccion.xhtml
+'State Añadir_contacto : direccion.xhtml
 
 State Inicio : direccion.xhtml
 
@@ -55,7 +58,11 @@ Registro_usuario --> Formulario_datos
 Registro_usuario -left> Inicio_sesion
 
 Panel_control -> Formulario_datos
-Panel_control --> fork_Actividad_Ususario : Actividade\ndel usuario
+Panel_control --> fork_Actividad_Ususario : Actividade\ncreadas
+Panel_control -left> Crear_actividad
+
+'Formulario_datos --> Añadir_contacto
+
 
 fork_Actividad_Ususario --> Actividades_ofertas
 fork_Actividad_Ususario --> Informacion_actividad
@@ -67,6 +74,5 @@ fork_Actividad --> Informacion_actividad
 Categorias -> Actividades_ofertas
 
 Actividades_ofertas -> Informacion_actividad
-
 
 @enduml
