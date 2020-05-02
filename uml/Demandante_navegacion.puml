@@ -1,0 +1,79 @@
+@startuml Demandante-navegacion
+left to right direction
+skinparam linetype ortho
+
+
+
+caption Diagrama de navegacion
+title Demandante
+
+hide empty description
+
+note left of Barra_navegacion : Desde cualquier pagina\npuede usarse la\nbarra de navegacion
+
+note left of Inicio : ../index
+note right of Categorias: ../categories
+note right of Actividades_ofertas : ../activities
+note right of Informacion_actividad: ../activities/[actividad id]
+
+note left of Inicio_sesion: ../sing/in
+note right of Registro_usuario : ../sign/up
+
+note right of Formulario_datos: ../profile
+note left of Panel_control: ../profile_view
+
+State Inicio : index.xhtml
+
+State Actividades_ofertas : activities.xhtml
+State Informacion_actividad : activity.xhtml
+State Categorias: categories.xhtml
+
+
+State Panel_control : profile_view.xhtml
+State Formulario_datos : profile.xhtml
+
+
+State fork_Inicio <<fork>>
+State Inicio_sesion : sign.xhtml
+State Registro_usuario : sign.xhtml
+
+State fork_Actividad <<fork>>
+State fork_Actividad_Ususario <<fork>>
+
+
+[*] -down> Inicio
+Inicio --> fork_Inicio : Usuario\nno inicializado
+Inicio ---> Panel_control :  Usuario\ninicializado
+Inicio -right-> fork_Actividad
+
+Barra_navegacion --> fork_Inicio : Usuario\nno inicializado
+Barra_navegacion --> Actividades_ofertas
+Barra_navegacion ---> Panel_control : Usuario\ninicializado
+
+fork_Inicio -> Registro_usuario
+fork_Inicio --> Inicio_sesion
+
+
+'Inicio_sesion -> Sesion_iniciada
+Inicio_sesion --> Inicio
+Inicio_sesion -> Registro_usuario
+
+Registro_usuario --> Formulario_datos
+Registro_usuario -> Inicio_sesion
+
+Panel_control ---> Formulario_datos
+Panel_control --> fork_Actividad_Ususario : Actividade\ndel usuario
+
+fork_Actividad_Ususario --> Actividades_ofertas
+fork_Actividad_Ususario --> Informacion_actividad
+
+fork_Actividad --> Categorias
+fork_Actividad --> Actividades_ofertas
+fork_Actividad --> Informacion_actividad
+
+Categorias -> Actividades_ofertas
+
+Actividades_ofertas -> Informacion_actividad
+
+
+@enduml

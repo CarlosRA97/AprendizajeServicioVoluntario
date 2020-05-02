@@ -1,0 +1,93 @@
+@startuml Ofertante-navegacion
+left to right direction
+skinparam linetype ortho
+
+
+caption Diagrama de navegacion
+title Ofertante
+
+hide empty description
+
+State Barra_navegacion
+
+note right of Barra_navegacion : Desde cualquier pagina\npuede usarse la\nbarra de navegacion
+
+note left of Inicio : ../index
+note right of Categorias: ../categories
+note right of Actividades_ofertas : ../activities
+note right of Informacion_actividad: ../activities/[actividad id]
+note left of Modificar_actividad: ../modify_activity/[actividad id]
+
+note left of Inicio_sesion: ../sing/in
+note right of Registro_usuario : ../sign/up
+
+note right of Formulario_datos: ../profile
+note left of Panel_control: ../profile_view
+
+note left of Crear_actividad: ../add_activity
+
+'=============== Entidades =================
+
+State Crear_actividad : add_activity.xhtml
+
+State Inicio : index.xhtml
+
+state Modificar_actividad : modify_activity.xhtml
+State Actividades_ofertas : activities.xhtml
+State Informacion_actividad : activity.xhtml
+State Categorias: categories.xhtml
+
+State Panel_control : profile_view.xhtml
+State Formulario_datos : profile.xhtml
+
+
+State fork_Inicio <<fork>>
+State Inicio_sesion : sign.xhtml
+State Registro_usuario : sign.xhtml
+
+State fork_Actividad <<fork>>
+State fork_Actividad_Ususario <<fork>>
+
+'===============Flujo==============
+
+[*] -> Inicio
+Inicio -> fork_Inicio : Usuario\nno inicializado
+Inicio ---> Panel_control :  Usuario\ninicializado
+Inicio -right-> fork_Actividad
+
+Barra_navegacion -> fork_Inicio : Usuario\nno inicializado
+Barra_navegacion --> Actividades_ofertas
+Barra_navegacion -> Panel_control : Usuario\ninicializado
+
+fork_Inicio ----> Registro_usuario
+fork_Inicio ----> Inicio_sesion
+
+
+'Inicio_sesion -> Sesion_iniciada
+Inicio_sesion --> Inicio
+Inicio_sesion -down> Registro_usuario
+
+Registro_usuario --> Formulario_datos
+Registro_usuario -left> Inicio_sesion
+
+Panel_control -right> Formulario_datos
+Panel_control ----> fork_Actividad_Ususario : Actividade\ncreadas
+Panel_control -right-> Crear_actividad
+
+'Formulario_datos --> Añadir_contacto
+
+
+fork_Actividad_Ususario --> Actividades_ofertas
+fork_Actividad_Ususario --> Informacion_actividad
+
+fork_Actividad --> Categorias
+fork_Actividad --> Actividades_ofertas
+fork_Actividad --> Informacion_actividad
+
+Categorias -> Actividades_ofertas
+
+Actividades_ofertas -> Informacion_actividad
+
+Informacion_actividad -> Modificar_actividad
+
+@enduml
