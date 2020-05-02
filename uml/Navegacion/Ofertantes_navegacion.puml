@@ -26,28 +26,29 @@ note left of Panel_control: ../profile_view
 
 note left of Crear_actividad: ../add_activity
 
+'=============== Entidades =================
 
+State Crear_actividad : add_activity.xhtml
 
-State Crear_actividad : direccion.xhtml
+State Inicio : index.xhtml
 
-State Inicio : direccion.xhtml
+state Modificar_actividad : modify_activity.xhtml
+State Actividades_ofertas : activities.xhtml
+State Informacion_actividad : activity.xhtml
+State Categorias: categories.xhtml
 
-State Actividades_ofertas : direccion.xhtml
-State Informacion_actividad : direccion.xhtml
-State Categorias: direccion.xhtml
-
-'State Sesion_iniciada {
-    State Panel_control : direccion.xhtml
-    State Formulario_datos : direccion.xhtml
+State Panel_control : profile_view.xhtml
+State Formulario_datos : profile.xhtml
 
 
 State fork_Inicio <<fork>>
-State Inicio_sesion : direccion.xhtml
-State Registro_usuario : direccion.xhtml
+State Inicio_sesion : sign.xhtml
+State Registro_usuario : sign.xhtml
 
 State fork_Actividad <<fork>>
 State fork_Actividad_Ususario <<fork>>
 
+'===============Flujo==============
 
 [*] -> Inicio
 Inicio -> fork_Inicio : Usuario\nno inicializado
