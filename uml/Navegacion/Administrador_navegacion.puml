@@ -1,32 +1,43 @@
-@startuml
-note "Desde cualquier pagina\nse puede usarse la\nbarra de navegacion" as N1
 
+@startuml
+left to right direction
+skinparam linetype ortho
 caption Diagrama de navegacion
 title Administrador
 
 hide empty description
 
 State Barra_navegacion
+note right of Barra_navegacion : Desde cualquier pagina\npuede usarse la\nbarra de navegacion
 
-State Gestion_actividad : direccion.xhtml
+note right of Inicio : ../index
+note left of Categorias: ../categories
+note right of Actividades_ofertas : ../activities
+note right of Informacion_actividad: ../activities/[actividad id]
 
-State Inicio : direccion.xhtml
+note right of Inicio_sesion: ../sing/in
+note right of Registro_usuario : ../sign/up
 
-State Actividades_ofertas : direccion.xhtml
-State Informacion_actividad : direccion.xhtml
-State Categorias: direccion.xhtml
+note right of Formulario_datos: ../profile
+note left of Panel_control: ../profile_view
+
+State Inicio : index.xhtml
+
+State Actividades_ofertas : activities.xhtml
+State Informacion_actividad : activity.xhtml
+State Categorias: categories.xhtml
 
 'State Sesion_iniciada {
-    State Panel_control : direccion.xhtml
-    State Formulario_datos : direccion.xhtml
+    State Panel_control : profile_view.xhtml
+    State Formulario_datos : profile.xhtml
 '
 '    [*] -> Panel_control
 '    Panel_control -> Formulario_datos
 '}
 
 State fork_Inicio <<fork>>
-State Inicio_sesion : direccion.xhtml
-State Registro_usuario : direccion.xhtml
+State Inicio_sesion : sign.xhtml
+State Registro_usuario : sign.xhtml
 
 State fork_Actividad <<fork>>
 State fork_Actividad_Ususario <<fork>>
@@ -36,8 +47,8 @@ State fork_Actividad_Ususario <<fork>>
 'fork_BarraNabegacion -down> Actividades_ofertas
 'fork_BarraNabegacion -down> Inici
 
-[*] --> Inicio
-Inicio -> fork_Inicio : Usuario\nno inicializado
+[*] -> Inicio
+Inicio ---> fork_Inicio : Usuario\nno inicializado
 Inicio -> Panel_control :  Usuario\ninicializado
 Inicio -right-> fork_Actividad
 
@@ -50,14 +61,14 @@ fork_Inicio --> Inicio_sesion
 
 
 'Inicio_sesion -> Sesion_iniciada
-Inicio_sesion --> Panel_control
+Inicio_sesion --> Inicio
 Inicio_sesion -right> Registro_usuario
 
 Registro_usuario --> Formulario_datos
 Registro_usuario -left> Inicio_sesion
 
 Panel_control -> Formulario_datos
-Panel_control --> fork_Actividad_Ususario : Actividade\na gestionar
+Panel_control --> fork_Actividad_Ususario : Actividades\na gestionar
 
 fork_Actividad_Ususario --> Actividades_ofertas
 fork_Actividad_Ususario --> Informacion_actividad
@@ -66,11 +77,9 @@ fork_Actividad --> Categorias
 fork_Actividad --> Actividades_ofertas
 fork_Actividad --> Informacion_actividad
 
-Informacion_actividad --> Gestion_actividad : Uniario\nadministrador\niniciado
+Categorias ---> Actividades_ofertas
 
-Categorias -> Actividades_ofertas
-
-Actividades_ofertas -> Informacion_actividad
+Actividades_ofertas -up> Informacion_actividad
 
 
 @enduml
