@@ -1,4 +1,4 @@
-@startuml
+@startuml Administrador-navegacion
 
 left to right direction
 skinparam linetype ortho
